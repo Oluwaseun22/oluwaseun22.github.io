@@ -428,9 +428,9 @@
           <span class="contact-link-type">GitHub</span>
           <span class="contact-link-val">github.com/Oluwaseun22</span>
         </a>
-        <a href="/cdn-cgi/l/email-protection#12617775677c667d607b7d7e73202752757f737b7e3c717d7f" class="contact-link-row">
+        <a id="email-link" class="contact-link-row" style="cursor:pointer;">
           <span class="contact-link-type">Email</span>
-          <span class="contact-link-val"><span class="__cf_email__" data-cfemail="8dfee8eaf8e3f9e2ffe4e2e1ecbfb8cdeae0ece4e1a3eee2e0">[email&#160;protected]</span></span>
+          <span class="contact-link-val" id="email-val"></span>
         </a>
         <div class="contact-link-row" style="cursor: default;">
           <span class="contact-link-type">Location</span>
@@ -462,7 +462,15 @@
   <p>Built with intention · Paisley, Scotland</p>
 </footer>
 
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+<script>
+  // Email rendered via JS to prevent Cloudflare mangling
+  const u = 'seguntoriola25';
+  const d = 'gmail.com';
+  const el = document.getElementById('email-val');
+  const lnk = document.getElementById('email-link');
+  if (el) el.textContent = u + '@' + d;
+  if (lnk) lnk.href = 'mailto:' + u + '@' + d;
+
   document.body.classList.add('js-loaded');
 
   const observer = new IntersectionObserver((entries) => {
